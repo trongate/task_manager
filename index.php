@@ -19,7 +19,7 @@ $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
 <body>
     <div class="container">
         <h1>Task Manager</h1>
-        <p class="text-center"><button>Create Task</button></p>
+        <p class="text-center"><a href="create.php" class="button">Create Task</a></p>
 
         <table>
             <thead>
@@ -37,7 +37,11 @@ $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 <tr>
                     <td><?= $row['task_title'] ?></td>
                     <td><?= $row['task_description'] ?></td>
-                    <td><?= $row['complete'] ?></td>
+                    <td class="text-center"><?php
+                    settype($row['complete'], 'int');
+                    $complete = ($row['complete'] === 1) ? 'yes' : 'no';
+                    echo $complete;
+                    ?></td>
                     <td class="text-center">EDIT</td>
                 </tr><?php
                 }
