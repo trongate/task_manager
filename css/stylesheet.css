@@ -1,0 +1,50 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+    background-color: steelblue;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 840px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background-color: #fff;
+    padding: 1em;
+}
+
+h1 {
+    text-align: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px #000 solid;
+    margin: 1em auto;
+    width: 760px;
+}
+
+th, td {
+    border: 1px #000 solid;
+    padding: .6em;
+}
+
+th {
+    background-color: #333;
+    color: #eee;
+}
+
+td {
+    font-size: .9em;
+}
+
+
