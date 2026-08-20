@@ -21,6 +21,12 @@ $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
         <h1>Task Manager</h1>
         <p class="text-center"><a href="create.php" class="button">Create Task</a></p>
 
+        <?php
+        if (empty($rows)) {
+            echo '<p class="text-center">There are currently no tasks.</p>';
+        } else {
+        ?>
+
         <table>
             <thead>
                 <tr>
@@ -48,6 +54,9 @@ $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 ?>
             </tbody>
         </table>
+        <?php
+        }
+        ?>
 
     </div>
 </body>
