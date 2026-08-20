@@ -1,3 +1,13 @@
+<?php
+include('database.php');
+
+// Fetch data from tasks table.
+$sql = 'SELECT * FROM tasks';
+$result = run_query($sql);
+
+// Convert $result into an array of $rows
+$rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,24 +31,17 @@
                 </tr>
             </thead>
             <tbody>
+                <?php
+                foreach($rows as $row) { 
+                ?>
                 <tr>
-                    <td>Task Title</td>
-                    <td>Task Description</td>
-                    <td>Complete</td>
+                    <td><?= $row['task_title'] ?></td>
+                    <td><?= $row['task_description'] ?></td>
+                    <td><?= $row['complete'] ?></td>
                     <td class="text-center">EDIT</td>
-                </tr>
-                <tr>
-                    <td>Task Title</td>
-                    <td>Task Description</td>
-                    <td>Complete</td>
-                    <td class="text-center">EDIT</td>
-                </tr>
-                <tr>
-                    <td>Task Title</td>
-                    <td>Task Description</td>
-                    <td>Complete</td>
-                    <td class="text-center">EDIT</td>
-                </tr>
+                </tr><?php
+                }
+                ?>
             </tbody>
         </table>
 
