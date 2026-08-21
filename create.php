@@ -9,14 +9,14 @@
 <body>
     <div class="container">
         <h1>Create Task</h1>
-        <form>
+        <form action="submit_task.php" method="post">
             <label>Task Title</label>
-            <input type="text" placeholder="Enter task title...">
+            <input type="text" name="task_title" placeholder="Enter task title...">
             <label>Task Description</label>
-            <textarea placeholder="Enter description here..." rows="7"></textarea>
+            <textarea name="task_description" placeholder="Enter description here..." rows="7"></textarea>
             <p class="text-center">
                 <a href="index.php" class="button alt">Cancel</a>
-                <button>Submit</button>
+                <button type="submit">Submit</button>
             </p>
         </form>
     </div>
