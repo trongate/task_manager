@@ -82,3 +82,15 @@ button:hover,
   border-color: #4682b4;
   color: #4682b4;
 }
+
+form {
+    max-width: 360px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 1em;
+    font-size: .8em;
+}
