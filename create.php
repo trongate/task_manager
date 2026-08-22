@@ -14,6 +14,10 @@
             <input type="text" name="task_title" placeholder="Enter task title...">
             <label>Task Description</label>
             <textarea name="task_description" placeholder="Enter description here..." rows="7"></textarea>
+            <label class="checkbox-container">
+                <input type="checkbox" name="complete" value="1"> 
+                <span>Complete</span>
+            </label>
             <p class="text-center">
                 <a href="index.php" class="button alt">Cancel</a>
                 <button type="submit">Submit</button>

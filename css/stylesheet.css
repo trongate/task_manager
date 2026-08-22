@@ -94,3 +94,9 @@ label {
     margin-top: 1em;
     font-size: .8em;
 }
+
+.checkbox-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

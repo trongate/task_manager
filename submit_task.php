@@ -4,13 +4,15 @@ include('database.php');
 // Fetch the posted values.
 $task_title = trim($_POST['task_title']);
 $task_description = trim($_POST['task_description']);
+$complete = $_POST['complete'] ?? 0;
+settype($complete, 'int');
 
 // Build SQL query.
 $sql = "INSERT INTO 
               tasks 
               (task_title, task_description, complete) 
               VALUES 
-              ('$task_title', '$task_description', 0)";
+              ('$task_title', '$task_description', $complete)";
 
 // Run the SQL query (insert the data).
 run_query($sql);
