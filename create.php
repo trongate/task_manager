@@ -10,10 +10,10 @@
     <div class="container">
         <h1>Create Task</h1>
         <form action="submit_task.php" method="post">
-            <label>Task Title</label>
-            <input type="text" name="task_title" placeholder="Enter task title...">
-            <label>Task Description</label>
-            <textarea name="task_description" placeholder="Enter description here..." rows="7"></textarea>
+            <label for="task_title">Task Title</label>
+            <input type="text" id="task_title" name="task_title" placeholder="Enter task title...">
+            <label for="task_description">Task Description</label>
+            <textarea id="task_description" name="task_description" placeholder="Enter description here..." rows="7"></textarea>
             <label class="checkbox-container">
                 <input type="checkbox" name="complete" value="1"> 
                 <span>Complete</span>
