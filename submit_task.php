@@ -7,6 +7,19 @@ $task_description = trim($_POST['task_description']);
 $complete = $_POST['complete'] ?? 0;
 settype($complete, 'int');
 
+include('validation_tests.php');
+
+if (!empty($validation_errors)) {
+    foreach($validation_errors as $validation_error) {
+        echo $validation_error.'<br>';
+    }
+} else {
+    echo 'Well done!';
+}
+
+die();
+
+
 // Build SQL query.
 $sql = "INSERT INTO 
               tasks 
