@@ -9,6 +9,13 @@
 <body>
     <div class="container">
         <h1>Create Task</h1>
+        <?php
+        if (isset($validation_errors)) {
+            foreach($validation_errors as $validation_error) {
+                echo '<p class="error">'.$validation_error.'</p>';
+            }
+        }
+        ?>
         <form action="submit_task.php" method="post">
             <label for="task_title">Task Title</label>
             <input type="text" id="task_title" name="task_title" placeholder="Enter task title...">
