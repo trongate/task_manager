@@ -1,3 +1,11 @@
+<?php
+// Establish the starter values for the form fields.
+$task_title = $_POST['task_title'] ?? '';
+$task_description = $_POST['task_description'] ?? '';
+$complete = $_POST['complete'] ?? 0;
+settype($complete, 'int');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,11 +26,15 @@
         ?>
         <form action="submit_task.php" method="post">
             <label for="task_title">Task Title</label>
-            <input type="text" id="task_title" name="task_title" placeholder="Enter task title...">
+            <input type="text" id="task_title" name="task_title" value="<?= $task_title ?>" placeholder="Enter task title...">
             <label for="task_description">Task Description</label>
-            <textarea id="task_description" name="task_description" placeholder="Enter description here..." rows="7"></textarea>
+            <textarea id="task_description" name="task_description" placeholder="Enter description here..." rows="7"><?= $task_description ?></textarea>
             <label class="checkbox-container">
-                <input type="checkbox" name="complete" value="1"> 
+                <input type="checkbox" name="complete" value="1"<?php
+                if ($complete === 1) {
+                    echo ' checked';
+                }
+                ?>> 
                 <span>Complete</span>
             </label>
             <p class="text-center">
