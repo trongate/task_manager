@@ -48,7 +48,7 @@ $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
                     $complete = ($row['complete'] === 1) ? 'yes' : 'no';
                     echo $complete;
                     ?></td>
-                    <td class="text-center">EDIT</td>
+                    <td class="text-center"><a href="create.php?update_id=<?= $row['id'] ?>">EDIT</a></td>
                 </tr><?php
                 }
                 ?>

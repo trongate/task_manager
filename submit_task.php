@@ -14,14 +14,27 @@ if (!empty($validation_errors)) {
     die();
 }
 
-// Build SQL query.
-$sql = "INSERT INTO 
-              tasks 
-              (task_title, task_description, complete) 
-              VALUES 
-              ('$task_title', '$task_description', $complete)";
+// Attempt to read $update_id from the URL.
+$update_id = $_GET['update_id'] ?? 0;
+settype($update_id, 'int');
 
-// Run the SQL query (insert the data).
+// Build SQL query.
+if ($update_id === 0) {
+    $sql = "INSERT INTO 
+                  tasks 
+                  (task_title, task_description, complete) 
+                  VALUES 
+                  ('$task_title', '$task_description', $complete)";
+} else {
+    $sql = "UPDATE tasks 
+                 SET 
+                 task_title = '$task_title', 
+                 task_description = '$task_description', 
+                 complete = $complete 
+                 WHERE id = $update_id";
+}
+
+// Run the SQL query (insert or update the data).
 run_query($sql);
 
 // Send the user back to index.php.
