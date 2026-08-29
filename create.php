@@ -59,6 +59,11 @@ settype($complete, 'int');
             </label>
             <p class="text-center">
                 <a href="index.php" class="button alt">Cancel</a>
+                <?php
+                if ($update_id > 0) {
+                    echo '<a href="confirm_delete.php?update_id='.$update_id.'" class="button danger">Delete Record</a>';
+                }
+                ?>
                 <button type="submit">Submit</button>
             </p>
         </form>
