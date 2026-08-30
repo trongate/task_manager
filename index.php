@@ -7,6 +7,9 @@ $result = run_query($sql);
 
 // Convert $result into an array of $rows
 $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+// Attempt read $action from the URL.
+$action = $_GET['action'] ?? '';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +22,11 @@ $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
 <body>
     <div class="container">
         <h1>Task Manager</h1>
+        <?php
+        if ($action !== '') {
+            echo '<p class="text-center user-feedback">The record was successfully '.$action.'.</p>';
+        }
+        ?>
         <p class="text-center"><a href="create.php" class="button">Create Task</a></p>
 
         <?php

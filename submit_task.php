@@ -20,12 +20,14 @@ settype($update_id, 'int');
 
 // Build SQL query.
 if ($update_id === 0) {
+    $action = 'inserted';
     $sql = "INSERT INTO 
                   tasks 
                   (task_title, task_description, complete) 
                   VALUES 
                   ('$task_title', '$task_description', $complete)";
 } else {
+    $action = 'updated';
     $sql = "UPDATE tasks 
                  SET 
                  task_title = '$task_title', 
@@ -38,5 +40,5 @@ if ($update_id === 0) {
 run_query($sql);
 
 // Send the user back to index.php.
-header('Location: index.php');
+header('Location: index.php?action='.$action);
 die();

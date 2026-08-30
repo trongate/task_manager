@@ -15,4 +15,4 @@ $sql = 'DELETE FROM tasks WHERE id = '.$update_id;
 run_query($sql);
 
 // Send user back to index.php
-header('Location: index.php');
+header('Location: index.php?action=deleted');
