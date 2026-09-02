@@ -30,12 +30,9 @@ function update($data, $update_id) {
     mysqli_stmt_execute($stmt);
 }
 
+A prepared SQL statement is a pre-compiled database template used to execute the same or similar SQL queries efficiently and securely. Instead of passing the entire query with user data directly to the database, a template is created using placeholders (like ? or $1) to abstract away the dynamic values.
+
 
 A prepared statement is a type of statement we can use to safely pass data into an SQL query without the data 
 being treated as SQL syntax.  
 
-
-
-
-
-A prepared statement is a way of putting data into an SQL query without letting that data become part of the SQL code.

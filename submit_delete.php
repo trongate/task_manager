@@ -1,7 +1,7 @@
 <?php
 // Attempt to read $update_id from the URL.
 $update_id = $_GET['update_id'] ?? 0;
-settype($update_id, 'int');
+settype($update_id, 'int'); // Makes SQL injection impossible!
 
 if ($update_id === 0) {
     // Send them back to the index.php page.
